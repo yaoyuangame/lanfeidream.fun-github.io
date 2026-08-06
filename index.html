@@ -3,169 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahin Soft - Crafting Worlds, One Game at a Time</title>
+    <title>LanFei Dream - Game Development Company</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
-            background-color: #fdfdfd;
-            color: #333;
-            margin: 0;
-            padding: 20px;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
         .container {
-            max-width: 800px;
+            max-width: 760px;
             margin: 0 auto;
-            background-color: #ffffff;
-            padding: 2em 3em;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
+            padding: 40px 24px 64px;
         }
-        h1, h2 {
-            font-weight: 600;
-            color: #111;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-top: 1.5em;
-        }
-        h1 {
-            font-size: 2.5em;
-            text-align: center;
-            border-bottom: none;
-            margin-top: 0;
-        }
-        h1 .tagline {
-            font-size: 0.5em;
-            font-weight: 400;
-            color: #666;
-            display: block;
-            margin-top: 10px;
-        }
+
+        /* ===== Nav ===== */
         nav {
-            text-align: center;
-            margin-bottom: 2.5em;
-            padding-bottom: 1.5em;
-            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0 32px;
         }
-        nav a {
+        .nav-logo {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .nav-links a {
+            color: #666666;
             text-decoration: none;
-            color: #007bff;
-            margin: 0 15px;
-            font-weight: 500;
-            font-size: 1.1em;
+            font-size: 14px;
+            margin-left: 24px;
         }
-        nav a:hover {
-            text-decoration: underline;
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            padding: 48px 0 40px;
+            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 8px;
+        }
+        .hero-company {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .hero-company em {
+            font-style: normal;
+            color: #4a6cf7;
+        }
+        .hero-sub {
+            font-size: 17px;
+            color: #555555;
+            max-width: 560px;
+        }
+
+        /* ===== Section ===== */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .section-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: #4a6cf7;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
         p {
-            font-size: 1.1em;
+            font-size: 15px;
+            color: #444444;
+            margin-bottom: 12px;
         }
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
+        p:last-child {
+            margin-bottom: 0;
         }
-        li {
-            margin-bottom: 0.5em;
-            font-size: 1.1em;
+        .muted {
+            color: #888888;
         }
-        a {
-            color: #007bff;
+        .small {
+            font-size: 13px;
         }
+
+        /* ===== About ===== */
+        .about-grid {
+            margin-top: 16px;
+        }
+        .about-row {
+            padding: 16px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .about-row:last-child {
+            border-bottom: none;
+        }
+        .about-row strong {
+            display: block;
+            font-size: 15px;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .about-row span {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* ===== Games ===== */
+        .game-list {
+            margin-top: 8px;
+        }
+        .game {
+            padding: 20px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .game:last-child {
+            border-bottom: none;
+        }
+        .game-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .game-name .status {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a6cf7;
+            background: #eef1ff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-left: 8px;
+            letter-spacing: 0.5px;
+        }
+        .game-name .status.soon {
+            color: #b45309;
+            background: #fef3c7;
+        }
+        .game-desc {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* ===== Values ===== */
+        .values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 8px;
+        }
+        @media (max-width: 520px) {
+            .values {
+                grid-template-columns: 1fr;
+            }
+        }
+        .value {
+            padding: 16px;
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
+        }
+        .value-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+        .value-desc {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 0;
+        }
+
+        /* ===== Updates ===== */
+        .update-list {
+            margin-top: 8px;
+        }
+        .update {
+            padding: 14px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .update:last-child {
+            border-bottom: none;
+        }
+        .update-date {
+            font-size: 12px;
+            color: #999999;
+            font-weight: 600;
+        }
+        .update-text {
+            font-size: 15px;
+            color: #333333;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            margin-top: 8px;
+        }
+        .faq {
+            padding: 14px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .faq:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* ===== Contact ===== */
+        .contact-block {
+            margin-top: 16px;
+        }
+        .contact-line {
+            font-size: 15px;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+        .contact-line a {
+            color: #4a6cf7;
+            text-decoration: none;
+        }
+        .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Footer ===== */
         footer {
-            text-align: center;
-            margin-top: 3em;
-            padding-top: 1.5em;
-            border-top: 2px solid #f0f0f0;
-            color: #888;
-            font-size: 0.9em;
+            padding-top: 32px;
+            font-size: 13px;
+            color: #999999;
+        }
+        .footer-links {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #666666;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .hero-company { font-size: 32px; }
+            .nav-links a { margin-left: 14px; font-size: 13px; }
+            section { padding: 32px 0; }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- 公司头部信息 -->
-        <header>
-            <h1>
-                Shahin Soft
-                <span class="tagline">Crafting Worlds, One Game at a Time.</span>
-            </h1>
-        </header>
-
-        <!-- 导航栏 -->
+        <!-- Nav -->
         <nav>
-            <a href="#about">About Us</a>
-            <a href="#games">Our Games</a>
-            <a href="#careers">Careers</a>
-            <a href="#contact">Contact</a>
+            <div class="nav-logo">LanFei Dream</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#games">Games</a>
+                <a href="#values">Values</a>
+                <a href="#updates">Updates</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
 
-        <main>
-            <!-- 关于我们 -->
-            <section id="about">
-                <h2>About Us</h2>
-                <p>
-                    Welcome to Shahin Soft. We are a passionate and innovative game development studio dedicated to creating unforgettable gaming experiences. Founded on the belief that games are a powerful medium for storytelling and connection, our mission is to build immersive worlds that captivate players and leave a lasting impact.
-                </p>
-                <p>
-                    Our philosophy is "Play with Purpose." Every game we create has a meaningful reason to exist. As a small, agile team, we thrive on creative freedom and collaboration, allowing us to polish our games to the highest standard and ensure that every voice on the team is heard. We don't just make games; we build dreams.
-                </p>
-            </section>
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-company">We craft games for <em>playful minds.</em></div>
+            <div class="hero-sub">LanFei Dream is an independent game studio focused on casual, accessible mobile games that bring a moment of fun to anyone, anywhere.</div>
+        </div>
 
-            <!-- 我们的游戏 -->
-            <section id="games">
-                <h2>Our Games</h2>
-                <h3>Project: ÆTHERIA (Working Title)</h3>
-                <p>
-                    <strong>Genre:</strong> Narrative-driven Puzzle Adventure<br>
-                    <strong>Platform:</strong> Mobile (iOS & Android) and PC (Steam)<br>
-                    <strong>Status:</strong> In Development
-                </p>
-                <p>
-                    We are currently deep in development on our debut title, Project Ætheria. Dive into a vibrant, hand-drawn world and solve mind-bending environmental puzzles to uncover a forgotten history. It’s a journey of discovery that will test your wits and warm your heart. While we can't reveal everything just yet, we are excited to share more updates soon.
-                </p>
-            </section>
+        <!-- About -->
+        <section id="about">
+            <div class="section-tag">About Us</div>
+            <h2>Who we are</h2>
+            <p>LanFei Dream was founded with a simple belief: games should be easy to pick up, hard to put down, and fun for everyone. We are a team of developers, artists, and dreamers who love making games that fit into daily life.</p>
+            <p>Our games are designed for short sessions, instant enjoyment, and universal appeal. We focus on clean mechanics, charming presentation, and experiences that respect the player's time.</p>
 
-            <!-- 招聘信息 -->
-            <section id="careers">
-                <h2>Careers</h2>
-                <p>
-                    Join our adventure! We are looking for talented and self-motivated individuals to help us shape the future of gaming. At Shahin Soft, you'll have the opportunity to work on exciting new projects from the ground up, with a high degree of ownership and creative input.
-                </p>
-                <h3>Current Openings:</h3>
-                <ul>
-                    <li>Unity Game Developer</li>
-                    <li>2D/3D Generalist Game Artist</li>
-                    <li>Systems & Economy Game Designer</li>
-                </ul>
-                <p>
-                    We are always on the lookout for exceptional talent. If you don't see a role that fits but believe you have what it takes to contribute to our team, we would still love to hear from you.
-                </p>
-                <p>
-                    <strong>How to Apply:</strong> Please send your resume, portfolio, and a brief cover letter explaining why you want to join Shahin Soft to our contact email: <a href="mailto:zahirshahin190@gmail.com">zahirshahin190@gmail.com</a>
-                </p>
-            </section>
+            <div class="about-grid">
+                <div class="about-row">
+                    <strong>Our Mission</strong>
+                    <span>To create simple, delightful games that bring joy to players around the world.</span>
+                </div>
+                <div class="about-row">
+                    <strong>Our Approach</strong>
+                    <span>Small teams, focused scope, polished execution. We do a few things and do them well.</span>
+                </div>
+                <div class="about-row">
+                    <strong>Our Audience</strong>
+                    <span>Casual players of all ages who want a quick, relaxing escape.</span>
+                </div>
+            </div>
+        </section>
 
-            <!-- 联系方式 -->
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <p>
-                    Let's create together. We are always open to new connections. Whether you are a player with feedback, a talented developer looking for your next challenge, or a potential business partner, we want to hear from you.
-                </p>
-                <p>
-                    <strong>General Inquiries & Business Development:</strong><br>
-                    For all questions, press inquiries, or partnership opportunities, please reach out to us at:<br>
-                    <a href="mailto:zahirshahin190@gmail.com">zahirshahin190@gmail.com</a>
-                </p>
-            </section>
-        </main>
+        <!-- Games -->
+        <section id="games">
+            <div class="section-tag">Our Games</div>
+            <h2>What we've made</h2>
 
-        <!-- 底部版权信息 -->
+            <div class="game-list">
+                <div class="game">
+                    <div class="game-name">Heart Jigsaw <span class="status">Live</span></div>
+                    <div class="game-desc">A relaxing puzzle game where you piece together beautiful heart-shaped images, one tile at a time. Simple to learn, calming to play.</div>
+                </div>
+                <div class="game">
+                    <div class="game-name">Block Blast Puzzle <span class="status">Live</span></div>
+                    <div class="game-desc">A fast, satisfying block-matching puzzle. Clear lines, chain combos, and keep your mind sharp.</div>
+                </div>
+                <div class="game">
+                    <div class="game-name">Word Garden <span class="status soon">Coming Soon</span></div>
+                    <div class="game-desc">A cozy word game where you grow a garden by discovering hidden words. Relaxing and brain-teasing at the same time.</div>
+                </div>
+                <div class="game">
+                    <div class="game-name">Tile Match 3D <span class="status soon">In Development</span></div>
+                    <div class="game-desc">A tactile 3D matching game designed for quick, satisfying play sessions on the go.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section id="values">
+            <div class="section-tag">What We Believe</div>
+            <h2>Our values</h2>
+
+            <div class="values">
+                <div class="value">
+                    <div class="value-title">Accessible by Design</div>
+                    <div class="value-desc">Anyone should be able to play our games. Simple rules, intuitive controls, no barriers.</div>
+                </div>
+                <div class="value">
+                    <div class="value-title">Quality over Quantity</div>
+                    <div class="value-desc">We would rather ship one polished game than many forgettable ones.</div>
+                </div>
+                <div class="value">
+                    <div class="value-title">Player First</div>
+                    <div class="value-desc">Every decision starts with the question: does this make the game more fun?</div>
+                </div>
+                <div class="value">
+                    <div class="value-title">Respect Your Time</div>
+                    <div class="value-desc">Our games respect your schedule. Jump in for two minutes or two hours.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updates -->
+        <section id="updates">
+            <div class="section-tag">News &amp; Updates</div>
+            <h2>What's new</h2>
+
+            <div class="update-list">
+                <div class="update">
+                    <div class="update-date">2026 · July</div>
+                    <div class="update-text">Heart Jigsaw reaches 100,000 downloads. Thank you to every player!</div>
+                </div>
+                <div class="update">
+                    <div class="update-date">2026 · June</div>
+                    <div class="update-text">New content pack released for Heart Jigsaw with 20 new puzzle images.</div>
+                </div>
+                <div class="update">
+                    <div class="update-date">2026 · May</div>
+                    <div class="update-text">LanFei Dream announces its next title, Word Garden, entering early development.</div>
+                </div>
+                <div class="update">
+                    <div class="update-date">2026 · March</div>
+                    <div class="update-text">Block Blast Puzzle soft-launched in selected regions.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="section-tag">FAQ</div>
+            <h2>Common questions</h2>
+
+            <div class="faq-list">
+                <div class="faq">
+                    <div class="faq-q">Are your games free to play?</div>
+                    <div class="faq-a">Yes. All of our current games are free to download and play, supported by optional ads and in-game purchases.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-q">Do you collect my personal data?</div>
+                    <div class="faq-a">We collect only the minimum data needed to run and improve our games. See our Privacy Policy for details.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-q">Can I propose a partnership or collaboration?</div>
+                    <div class="faq-a">We're always open to hearing from players and partners. Reach out to us via the contact details below.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-q">How can I report a bug or issue?</div>
+                    <div class="faq-a">Email us and we'll look into it as soon as possible. Your feedback helps us improve.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-tag">Contact</div>
+            <h2>Get in touch</h2>
+            <p>Questions, feedback, or business inquiries — we'd love to hear from you.</p>
+            <div class="contact-block">
+                <div class="contact-line">LanFei Dream</div>
+                <div class="contact-line">Email: <a href="mailto:carahoward1991@gmail.com">carahoward1991@gmail.com</a></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Shahin Soft. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div>&copy; 2026 LanFei Dream. All rights reserved.</div>
         </footer>
-
     </div>
-
 </body>
 </html>
